@@ -1,5 +1,5 @@
 # distributed_iot_system
-Distributed System written in Java, GO and Vue
+Distributed System written in Java, GO and Vue with simulated data
 
 ## How to start the System
 - clone the repository and use `docker-compose up -d --build`
