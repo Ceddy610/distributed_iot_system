@@ -1,0 +1,49 @@
+.card-head {
+    display:flex;
+    justify-content: center;
+}
+
+.card-live {
+    position: relative;
+}
+
+.card-live:before {
+    content: "Live";
+    color: red;
+    background-color: #393e46;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.mini-card-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.mini-card {
+    display: flex;
+    justify-content: center;
+    margin: 0 15px 0 15px;
+    flex-direction: column;
+}
+
+.mini-card p {
+    margin-top: 0;
+    align-self: center;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.mini-card.sub i {
+    font-size: 10pt;
+    margin-bottom: 10px;
+}
+
+.mini-card.sub h3 {
+    margin-bottom: 0;
+}

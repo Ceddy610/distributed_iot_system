@@ -1,0 +1,11 @@
+{
+  "gateway": {
+    "ip": "",
+    "port": 8008
+  },
+  "sensor": {
+    "ip": "",
+    "port": 0,
+    "name": "sensor"
+  }
+}

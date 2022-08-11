@@ -1,0 +1,11 @@
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/Main.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/rpc/DatabaseServiceGrpc.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/HttpServer.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/ClientHandler.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/services/helperService.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/RPCClient.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/services/sensorDataService.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/rpc/Database.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/models/SensorDataModel.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/models/SensorDataModelResponse.java
+/Users/cedricengler/GolandProjects/DS-Praktikum/http_server/src/main/java/org/httpserver/models/RttDataModel.java

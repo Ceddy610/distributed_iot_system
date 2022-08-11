@@ -1,0 +1,17 @@
+.beautify-button {
+    background-color: #393e46;
+    display: inline-block;
+    border-radius: 7px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.beautify-button:hover {
+    background-color: #00adb5;
+    animation-duration: 1s;
+}
+
+.beautify-button p {
+    margin: 12px 10px 10px 10px;
+}

@@ -1,0 +1,83 @@
+syntax = "proto3";
+package org.rpc;
+
+message sensorDataRequest {
+  string temperature = 1;
+  string sundensity = 2;
+  string humidity = 3;
+  string pressure = 4;
+}
+
+message sensorDataResponse {
+  string date = 1;
+  string temperature = 2;
+  string sundensity = 3;
+  string humidity = 4;
+  string pressure = 5;
+}
+
+message rttDataRequest {
+  string activeSensors = 1;
+  string rttUdpAverage = 2;
+  string rttTcpAverage = 3;
+  string frequency = 4;
+}
+
+message rttDataResponse {
+  string date = 1;
+  string activeSensors = 2;
+  string rttUdpAverage = 3;
+  string rttTcpAverage = 4;
+  string frequency = 5;
+}
+
+
+message saveSensorDataRequest {
+  sensorDataRequest sensordata = 1;
+}
+
+message saveSensorDataResponse {
+  sensorDataResponse sensordata = 1;
+}
+
+message getSensorDataRequest {
+}
+
+message getSensorDataResponse {
+  sensorDataResponse sensorData = 1;
+}
+
+message saveRttRequest {
+  rttDataRequest rttdata = 1;
+}
+
+message saveRttResponse {
+  rttDataResponse rttdata = 1;
+}
+
+message getRttRequest {
+
+}
+
+message getRttResponse {
+  rttDataResponse rttdata = 1;
+}
+
+message deleteSensorDataRequest {
+}
+
+message deleteSensorDataResponse {
+  string response = 1;
+}
+
+service DatabaseService {
+  rpc saveSensorData (saveSensorDataRequest) returns (saveSensorDataResponse) {};
+
+  rpc getSensorData (getSensorDataRequest) returns (getSensorDataResponse) {};
+
+  rpc deleteSensorData (deleteSensorDataRequest) returns (deleteSensorDataResponse) {};
+
+  rpc saveRtt (saveRttRequest) returns (saveRttResponse) {};
+
+  rpc getRtt (getRttRequest) returns (getRttResponse) {};
+}

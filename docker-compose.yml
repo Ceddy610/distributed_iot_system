@@ -1,0 +1,81 @@
+services:
+
+  httpserver:
+    build:
+      context: ./http_server
+    hostname: "httpserver"
+    depends_on:
+      - "rpcserver1"
+      - "rpcserver2"
+    ports:
+      - "8051:8051/tcp"
+    links:
+      - rpcserver1
+      - rpcserver2
+
+  iotgateway:
+    build:
+      context: ./iot_gateway_java
+    depends_on:
+      - "httpserver"
+    ports:
+      - "8008:8008/udp"
+
+  sensor:
+    deploy:
+      replicas: 3
+    build:
+      context: ./sensor_udp
+    depends_on:
+      - "iotgateway"
+    network_mode: "host"
+
+  mqttsensor:
+    deploy:
+      replicas: 15
+    build:
+      context: ./mqtt_sensor
+    depends_on:
+      - "mosquitto"
+      - "iotgateway"
+    network_mode: "host"
+
+
+  mqtt_to_udp:
+    build:
+      context: ./mqtt_to_udp
+    depends_on:
+      - "mosquitto"
+      - "iotgateway"
+    network_mode: "host"
+
+  rpcserver1:
+    build:
+      context: ./rpc_server
+    hostname: "rpcserver1"
+    command:
+      - "9091"
+    depends_on:
+      - "mosquitto"
+    ports:
+      - "9091:27017"
+
+  rpcserver2:
+    build:
+      context: ./rpc_server
+    hostname: "rpcserver2"
+    command:
+      - "9092"
+    depends_on:
+      - "mosquitto"
+    ports:
+      - "9092:27017"
+
+
+  mosquitto:
+    image: eclipse-mosquitto
+    volumes:
+      - ./:/mosquitto/:rw
+    ports:
+      - 1883:1883
+      - 9001:9001
