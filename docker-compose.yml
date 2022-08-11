@@ -32,7 +32,7 @@ services:
 
   mqttsensor:
     deploy:
-      replicas: 15
+      replicas: 2
     build:
       context: ./mqtt_sensor
     depends_on:
